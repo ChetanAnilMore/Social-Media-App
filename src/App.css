@@ -10,9 +10,13 @@
 .posts{
   display: flex;
   justify-content: space-between;
+  justify-items: center;
 }
 .post{
   margin: 2px 10px;
   max-height: 400px;
   max-width: 300px;
+}
+.post-card{
+  margin: 20px 50px;
 }
