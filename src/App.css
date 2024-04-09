@@ -1,11 +1,13 @@
+
 .app-container{
   display: flex;
+  background: slategray
 }
 .content {
   width: 100%;
 }
 .sidebar{
-  min-height: 800px;
+  min-height: 750px;
 }
 .posts{
   display: flex;
@@ -19,4 +21,14 @@
 }
 .post-card{
   margin: 20px 50px;
+  background-color: indigo;
+  color: white;
+}
+.createPost{
+  width: 80%;
+  margin-top: 50px;
+  margin-left: 10%;
+}
+.WelcomeMessage{
+  margin: 30px;
 }
