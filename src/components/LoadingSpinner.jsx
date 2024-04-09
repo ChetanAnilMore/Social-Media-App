@@ -1,12 +1,12 @@
 const LoadingSpinner = () => {
   return (
-    <div class="d-flex justify-content-center my-5">
+    <div className="d-flex justify-content-center my-5">
       <div
-        class="spinner-border"
+        className="spinner-border"
         style={{ width: "5rem", height: "5rem" }}
         role="status"
       >
-        <span class="visually-hidden">Loading...</span>
+        <span className="visually-hidden">Loading...</span>
       </div>
     </div>
   );

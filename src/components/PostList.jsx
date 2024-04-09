@@ -5,34 +5,7 @@ import WelcomeMessage from "./WelcomeMessage";
 import LoadingSpinner from "./LoadingSpinner";
 
 const PostList = () => {
-  const { postList, addInitialPosts } = useContext(PostListData);
-  const [fetching, setfetching] = useState(false);
-
-  useEffect(() => {
-    setfetching(true);
-
-    const controller = new AbortController();
-    const signal = controller.signal;
-
-    fetch("https://dummyjson.com/posts", { signal })
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setfetching(false);
-      });
-
-    return () => {
-      controller.abort();
-    };
-  }, []);
-
-  const handleGetPostClick = () => {
-    fetch("https://dummyjson.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-      });
-  };
+  const { postList, fetching, handleGetPostClick } = useContext(PostListData);
 
   return (
     <>

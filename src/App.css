@@ -9,6 +9,11 @@
 .sidebar{
   min-height: 750px;
 }
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    display: none; /* Hide the sidebar on mobile devices */
+  }
+}
 .posts{
   display: flex;
   justify-content: space-between;
