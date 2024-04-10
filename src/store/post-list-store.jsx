@@ -27,14 +27,6 @@ const PostListProvider = ({ children }) => {
   const [postList, dispatchPostList] = useReducer(postListReducer, []);
   const [fetching, setfetching] = useState(false);
 
-  const handleGetPostClick = () => {
-    fetch("https://dummyjson.com/posts")
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-      });
-  };
-
   const addPost = (post) => {
     dispatchPostList({
       type: "ADD_POST",
@@ -78,13 +70,23 @@ const PostListProvider = ({ children }) => {
     };
   }, []);
 
+  const handleGetPostClick = () => {
+    setfetching(true);
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPosts(data.posts);
+        setfetching(false);
+      });
+  };
+
   return (
     <PostList.Provider
       value={{
         postList,
+        fetching,
         addPost,
         handleGetPostClick,
-        fetching,
         deletePost,
       }}
     >
