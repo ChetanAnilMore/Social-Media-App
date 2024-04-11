@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const Header = () => {
+  const navigate = useNavigate();
   return (
     <>
       {" "}
@@ -61,10 +64,18 @@ const Header = () => {
             </form>
 
             <div className="text-end">
-              <button type="button" className="btn btn-outline-light me-2">
+              <button
+                type="button"
+                onClick={() => navigate("/login")}
+                className="btn btn-outline-light me-2"
+              >
                 Login
               </button>
-              <button type="button" className="btn btn-warning">
+              <button
+                type="button"
+                onClick={() => navigate("/sign-up")}
+                className="btn btn-warning"
+              >
                 Sign-up
               </button>
             </div>

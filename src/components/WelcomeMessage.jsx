@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 const WelcomeMessage = ({ onGetPostClick }) => {
+  const navigate = useNavigate();
   return (
     <center>
       <div className="bg-gray text-secondary px-4 py-5 text-center">
@@ -15,6 +18,7 @@ const WelcomeMessage = ({ onGetPostClick }) => {
             </p>
             <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
               <button
+                onClick={() => navigate("/create-post")}
                 type="button"
                 className="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold"
               >
